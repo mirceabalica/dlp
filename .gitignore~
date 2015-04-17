@@ -1,0 +1,4 @@
+*.png
+db.sqlite3
+*.pyc
+*.JPG

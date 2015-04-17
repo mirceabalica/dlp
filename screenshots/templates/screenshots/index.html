@@ -1,0 +1,56 @@
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'staticfiles/details.css' %}">
+<script type="text/javascript" src="{% static 'staticfiles/perpage.js' %}"></script>
+<body>
+    <div class="actions">
+        <span class="step-links">
+            {% if on_page_screenshots.has_previous %}
+                <input type="submit" value="Previous" onclick="window.location='?page={{ on_page_screenshots.previous_page_number }}'">
+            {% endif %}
+
+            <span>Page </span>
+            <span class="current">
+                 {{ on_page_screenshots.number }} / {{ on_page_screenshots.paginator.num_pages }}
+            </span>
+
+            {% if on_page_screenshots.has_next %}
+                <input type="submit" value="Next" onclick="window.location='?page={{ on_page_screenshots.next_page_number }}'">
+            {% endif %}
+        </span>
+    </div>
+
+    {% if on_page_screenshots %}
+    <div id="tableid">
+        <table class = "demo">
+            <thead>
+            <tr>
+                <th>QA Image</th>
+                <th>Production Image</th>
+            </thead>
+            <tbody>
+            {% for scr in on_page_screenshots %}
+                <th>{{ scr.domain.url }}</th>
+                <th>{{ scr.domain.url }}</th>
+                <tr>
+                    <td>
+                        <a href="/screenshots/{{ scr.id }}/">
+                            <img title="{{ scr.domain.url }} QA" class="image" src="{{ scr.qa_image.url }}">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/screenshots/{{ scr.id }}/">
+                            <img title="{{ scr.domain.url }} QA" class="image" src="{{ scr.production_image.url }}">
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No domains are available.</p>
+    {% endif %}
+</body>

@@ -1,0 +1,31 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'staticfiles/details.css' %}">
+
+<div class="actions">
+    <input type="submit" value="Previous" {{ previous_domain_id.1 }}  onclick="window.location='/screenshots/{{ previous_domain_id.0 }}/';">
+    <input type="submit" value="Next" {{ next_domain_id.1 }} onclick="window.location='/screenshots/{{ next_domain_id.0 }}/';">
+    <input type="submit" value="Back to all domains" onclick="window.location='/screenshots/';">
+    <span>  {{ domain_item.domain.url }} </span>
+    <span> Date taken: {{ domain_item.date_taken }} </span>
+    <span> Run id: {{domain_item.run_id }} </span>
+
+</div>
+
+<table class="demo">
+    <thead>
+    <tr>
+        <th>QA Image</th>
+        <th>Production Image</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <img class="image" src="{{ domain_item.qa_image.url }}" />
+            </td>
+            <td>
+                <img class="image" src="{{ domain_item.production_image.url }}" />
+            </td>
+    </tbody>
+</table>

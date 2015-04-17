@@ -1,0 +1,43 @@
+.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+        width: 100%;
+        font-family: sans-serif;
+        font-size: 12px;
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:5px;
+        font-size: 10px;
+        vertical-align: top;
+	}
+
+    .image {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+    .actions {
+        padding: 3px;
+        position: fixed;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: white;
+        width: 100%;
+        border-bottom: 1px solid #e8e8e8;
+        border-top: 1px solid #e8e8e8;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    }
+
+    .actions span{
+        padding: 2px;
+    }
